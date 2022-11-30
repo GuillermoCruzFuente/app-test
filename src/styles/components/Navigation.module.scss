@@ -1,0 +1,47 @@
+@use "../base/variables" as var;
+
+.navbar {
+	background-color: rgba($color: var.$navbar, $alpha: 0.5);
+	backdrop-filter: blur(10px);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-inline: 2rem;
+
+	width: 100vw;
+	height: var(--navbar-height);
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	box-shadow: 0 0 16px #000;
+
+	ol {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		gap: 2rem;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.link {
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 700;
+	}
+
+	.logo {
+		font-size: 2rem;
+		color: #fff;
+		font-weight: 700;
+	}
+}
