@@ -1,0 +1,9 @@
+body {
+	background-color: var(--background-color);
+	color: #fff;
+	width: 100vw;
+
+	//width: 100vw cause overflow-x to scroll
+	//need disable it manually
+	overflow: hidden auto;
+}
