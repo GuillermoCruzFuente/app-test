@@ -1,0 +1,41 @@
+.homeSection {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	h1 {
+		width: min(600px, 100%);
+		text-align: center;
+		font-size: clamp(1.5rem, 3rem, 5vw);
+		color: var(--main-title-color);
+		line-height: 1.1;
+	}
+
+	p {
+		width: min(400px, 100%);
+		text-align: center;
+		color: var(--text-color);
+	}
+
+	.startLink {
+		text-decoration: none;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: var(--text-color);
+		background-color: var(--active-link);
+		padding: 0.25rem 2rem;
+		border-radius: 2rem;
+
+		$hover-transition-time: 200ms;
+
+		transition: background-color $hover-transition-time,
+			color $hover-transition-time;
+
+		&:hover {
+			background-color: var(--text-color);
+			color: var(--active-link);
+		}
+	}
+}
