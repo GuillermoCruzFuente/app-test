@@ -1,0 +1,8 @@
+// since every route will be contain inside a section
+// define a global style for it
+section {
+	width: 75%;
+	min-height: 100vh;
+	padding-top: calc(var(--navbar-height) + 3rem);
+	margin-inline: auto;
+}
