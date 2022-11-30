@@ -2,7 +2,13 @@
 // define a global style for it
 section {
 	width: 75%;
-	min-height: 100vh;
-	padding-top: calc(var(--navbar-height) + 3rem);
+
+	//in order to expand the section and avoid overflow-y
+	//set a min-height equals to all viewport minus the navbar height
+	min-height: calc(100vh - (var(--navbar-height)));
+
+	//to avoid nav and section interferences
+	margin-top: calc(var(--navbar-height));
+
 	margin-inline: auto;
 }
