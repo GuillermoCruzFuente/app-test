@@ -8,7 +8,7 @@ const Nav = () => {
 	return (
 		<nav className={styles.navbar}>
 			<Link className={styles.logo} to='/'>
-				AppTest
+				BirthTracker
 			</Link>
 
 			<ol>
