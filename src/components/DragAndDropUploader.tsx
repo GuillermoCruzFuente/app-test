@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { FileRejection, useDropzone } from "react-dropzone";
-import styles from "../styles/components/DragAndDropInput.module.scss";
+import styles from "../styles/components/DragAndDropUploader.module.scss";
 import ImageUploader from "./ImageUploader";
 
 const DragAndDropUploader = () => {

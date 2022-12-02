@@ -1,3 +1,5 @@
+@use "../sass-utils/mixins";
+
 .table {
 	width: 100%;
 	margin-top: 2rem;
@@ -9,29 +11,11 @@
 	thead {
 		tr {
 			input {
+				@include mixins.fancy-input;
+
 				width: 100%;
-
-				background-color: #8f3bd0;
-				border: transparent dashed 2px;
-				outline: none;
+				padding: 0 0 0 0.25rem;
 				border-radius: 5px;
-				color: var(--text-color);
-				font-weight: 300;
-				transition: border 200ms, background-color 200ms;
-
-				&::placeholder {
-					color: var(--text-color);
-				}
-
-				&:disabled {
-					opacity: 0.5;
-				}
-
-				&:is(:focus) {
-					border: var(--main-title-color) dashed 2px;
-					background-color: #621d97;
-				}
-
 				margin-bottom: 1.5rem;
 			}
 		}
@@ -56,7 +40,6 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-
 	margin-top: 1rem;
 	margin-bottom: 3rem;
 
@@ -67,18 +50,8 @@
 	}
 
 	button {
-		background-color: var(--active-link);
-		text-transform: uppercase;
-		font-weight: 700;
-		color: var(--text-color);
-		outline: none;
-		border: none;
-		transition: color 200ms, background-color 200ms;
-
-		&:hover,
-		&:focus {
-			background-color: var(--text-color);
-			color: var(--active-link);
-		}
+		@include mixins.fancy-button;
+		border-radius: unset;
+		padding: 0.15rem 0.5rem;
 	}
 }
