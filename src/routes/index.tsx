@@ -1,23 +1,19 @@
 import { createHashRouter } from "react-router-dom";
-
 import Root from "../Root";
-
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Employees from "./pages/Employees";
 import Upload from "./pages/Upload";
+import AuthLogin from "../components/AuthLogin";
+import createChildrenTree from "../components/CreateChildrenTree";
+import type {
+	CustomRoute,
+	RouteDictionary,
+	RouteElement,
+	RouterStructure,
+} from "../@types/routes";
+import { employeesLoader } from "../loaders/EmployeesLoader";
 
-type CustomRoute = {
-	path: string;
-	text: string;
-	protected?: true;
-};
-
-type RouteDictionary = {
-	[route: string]: CustomRoute;
-};
-
-export const AppRoutes: RouteDictionary = {
+export const AppRoutes: RouteDictionary<CustomRoute> = {
 	home: {
 		path: "/",
 		text: "Home",
@@ -29,12 +25,47 @@ export const AppRoutes: RouteDictionary = {
 	employees: {
 		path: "/employees",
 		text: "Employees",
-		protected: true,
+		isProtected: {
+			redirectTo: "/",
+		},
 	},
 	upload: {
 		path: "/upload",
 		text: "Upload",
-		protected: true,
+		isProtected: {
+			redirectTo: "/",
+		},
+	},
+};
+
+const AppRouteElements: RouteDictionary<RouteElement> = {
+	home: { element: <Home /> },
+	login: { element: <AuthLogin /> },
+	employees: {
+		element: <Employees />,
+		loader: employeesLoader,
+	},
+	upload: {
+		element: <Upload />,
+	},
+};
+
+export const RoutesWithElements: RouterStructure = {
+	home: {
+		...AppRoutes.home,
+		...AppRouteElements.home,
+	},
+	login: {
+		...AppRoutes.login,
+		...AppRouteElements.login,
+	},
+	employees: {
+		...AppRoutes.employees,
+		...AppRouteElements.employees,
+	},
+	upload: {
+		...AppRoutes.upload,
+		...AppRouteElements.upload,
 	},
 };
 
@@ -42,24 +73,7 @@ const router = createHashRouter([
 	{
 		path: "/",
 		element: <Root />,
-		children: [
-			{
-				path: AppRoutes.home.path,
-				element: <Home />,
-			},
-			{
-				path: AppRoutes.login.path,
-				element: <Login />,
-			},
-			{
-				path: AppRoutes.employees.path,
-				element: <Employees />,
-			},
-			{
-				path: AppRoutes.upload.path,
-				element: <Upload />,
-			},
-		],
+		children: createChildrenTree(RoutesWithElements),
 	},
 ]);
 
