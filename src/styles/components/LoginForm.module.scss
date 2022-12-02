@@ -1,0 +1,79 @@
+@use "../base/variables";
+
+.loginForm {
+	width: min(400px, 100%);
+	gap: 2rem;
+	background-color: rgba($color: variables.$login-form-color, $alpha: 0.5);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 0 32px rgb(65, 4, 93);
+	border: dashed #3e0b49 2px;
+
+	padding: 2rem;
+	border-radius: 10px;
+
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+
+	margin-inline: auto;
+
+	position: relative;
+	overflow: hidden;
+
+	h1 {
+		font-size: clamp(1.25rem, 2vw, 2rem);
+		text-align: center;
+		color: var(--main-title-color);
+	}
+
+	input,
+	button {
+		width: 100%;
+	}
+
+	label {
+		width: 100%;
+		color: var(--main-title-color);
+		// font-weight: 700;
+	}
+
+	input {
+		background-color: #8f3bd0;
+		border: transparent dashed 2px;
+		outline: none;
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+		color: var(--text-color);
+		font-weight: 300;
+
+		transition: border 200ms, background-color 200ms;
+
+		&:disabled {
+			opacity: 0.5;
+		}
+
+		&:is(:focus) {
+			border: var(--main-title-color) dashed 2px;
+			background-color: #621d97;
+		}
+	}
+
+	button {
+		background-color: var(--active-link);
+		// border: transparent dashed 2px;
+		border-radius: 10px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: var(--text-color);
+		outline: none;
+		padding: 1rem;
+		transition: color 200ms, background-color 200ms;
+
+		&:hover,
+		&:focus {
+			background-color: var(--text-color);
+			color: var(--active-link);
+		}
+	}
+}
