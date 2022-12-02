@@ -23,7 +23,7 @@ and finally run the dev command
 
 ## How to update production
 
-on every push to main branch the [render platform](render.io) handle the build and deploy of production [here](https://birthtracker.onrender.com/)
+on every push to main branch the [render platform](https://render.com) handle the build and deploy of production [here](https://birthtracker.onrender.com/)
 
 ## How to login
 
