@@ -1,0 +1,51 @@
+@mixin flex-center($direction, $wrap: nowrap) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin fancy-input {
+	background-color: #8f3bd0;
+	border: transparent dashed 2px;
+	outline: none;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	color: var(--text-color);
+	font-weight: 300;
+	transition: border 200ms, background-color 200ms;
+
+	&:disabled {
+		opacity: 0.5;
+	}
+
+	&:is(:focus) {
+		border: var(--main-title-color) dashed 2px;
+		background-color: #621d97;
+	}
+
+	&::placeholder {
+		color: var(--text-color);
+	}
+}
+
+@mixin fancy-button {
+	appearance: unset;
+
+	background-color: var(--active-link);
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--text-color);
+	outline: none;
+	padding: 1rem;
+	border: none;
+	transition: color 200ms, background-color 200ms;
+
+	&:hover,
+	&:focus {
+		background-color: var(--text-color);
+		color: var(--active-link);
+	}
+}
