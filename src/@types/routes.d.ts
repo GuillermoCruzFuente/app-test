@@ -16,3 +16,6 @@ export type CustomRoute = {
 
 export interface RouteElement
 	extends Extract<RouteObject, NonIndexRouteObject> {}
+
+export type RouterStructure = RouteDictionary<CustomRoute> &
+	RouteDictionary<RouteElement>;
