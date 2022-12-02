@@ -1,0 +1,103 @@
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	z-index: 10;
+
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	background-color: rgba($color: #000000, $alpha: 0.75);
+	backdrop-filter: blur(10px);
+}
+
+.text {
+	font-weight: 700;
+	font-size: 0.75rem;
+	padding-inline: 35%;
+	text-align: center;
+}
+
+.cubeGrid {
+	width: 10%;
+	aspect-ratio: 1;
+
+	.cube {
+		width: 33%;
+		height: 33%;
+		background-color: #a853e9;
+		float: left;
+		-webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+		animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+	}
+
+	.cube1 {
+		-webkit-animation-delay: 0.2s;
+		animation-delay: 0.2s;
+	}
+
+	.cube2 {
+		-webkit-animation-delay: 0.3s;
+		animation-delay: 0.3s;
+	}
+
+	.cube3 {
+		-webkit-animation-delay: 0.4s;
+		animation-delay: 0.4s;
+	}
+
+	.cube4 {
+		-webkit-animation-delay: 0.1s;
+		animation-delay: 0.1s;
+	}
+	.cube5 {
+		-webkit-animation-delay: 0.2s;
+		animation-delay: 0.2s;
+	}
+	.cube6 {
+		-webkit-animation-delay: 0.3s;
+		animation-delay: 0.3s;
+	}
+	.cube7 {
+		-webkit-animation-delay: 0s;
+		animation-delay: 0s;
+	}
+	.cube8 {
+		-webkit-animation-delay: 0.1s;
+		animation-delay: 0.1s;
+	}
+	.cube9 {
+		-webkit-animation-delay: 0.2s;
+		animation-delay: 0.2s;
+	}
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+	0%,
+	70%,
+	100% {
+		-webkit-transform: scale3D(1, 1, 1);
+		transform: scale3D(1, 1, 1);
+	}
+	35% {
+		-webkit-transform: scale3D(0, 0, 1);
+		transform: scale3D(0, 0, 1);
+	}
+}
+
+@keyframes sk-cubeGridScaleDelay {
+	0%,
+	70%,
+	100% {
+		-webkit-transform: scale3D(1, 1, 1);
+		transform: scale3D(1, 1, 1);
+	}
+	35% {
+		-webkit-transform: scale3D(0, 0, 1);
+		transform: scale3D(0, 0, 1);
+	}
+}
