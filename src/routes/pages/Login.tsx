@@ -1,8 +1,11 @@
+import LoginForm from "../../components/LoginForm";
+import formStyles from "../../styles/components/LoginForm.module.scss";
+import pageStyles from "../../styles/pages/Login.module.scss";
+
 const Login = () => {
 	return (
-		<section>
-			<h1>WIP</h1>
-			<p>This page will contain a login form</p>
+		<section className={pageStyles.section}>
+			<LoginForm className={formStyles.loginForm} />
 		</section>
 	);
 };
