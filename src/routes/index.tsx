@@ -32,9 +32,9 @@ export const AppRoutes: RouteDictionary<CustomRoute> = {
 	upload: {
 		path: "/upload",
 		text: "Upload",
-		isProtected: {
-			redirectTo: "/",
-		},
+		// isProtected: {
+		// 	redirectTo: "/",
+		// },
 	},
 };
 
