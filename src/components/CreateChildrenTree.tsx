@@ -1,7 +1,7 @@
 import { RouteObject } from "react-router-dom";
+import { RouterStructure } from "../@types/routes";
 import NoMatch from "./NoMatch";
 import ProtectedRoute from "./ProtectedRoute";
-import { RouterStructure } from "../routes";
 
 const createChildrenTree = (
 	routerStructure: RouterStructure
