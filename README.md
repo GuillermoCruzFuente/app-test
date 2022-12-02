@@ -39,8 +39,8 @@ credentials represented as a js object, make sure to remove the double quotes ("
 
 ```js
 {
-	username: "Guillermo";
-	password: "Factumex";
+	username: "Guillermo",
+	password: "Factumex"
 }
 ```
 
