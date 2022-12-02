@@ -80,12 +80,12 @@ const LoginForm = ({ className }: { className?: string }) => {
 
 			<label>
 				username
-				<SafeInput ref={usernameInputRef} type={"text"} />
+				<SafeInput ref={usernameInputRef} type={"text"} required/>
 			</label>
 
 			<label>
 				password
-				<SafeInput ref={passwordInputRef} type={"password"} />
+				<SafeInput ref={passwordInputRef} type={"password"} required/>
 			</label>
 
 			<button ref={buttonInputRef} type={"submit"}>
