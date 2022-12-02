@@ -2,7 +2,8 @@
 
 .navbar {
 	background-color: rgba($color: var.$navbar, $alpha: 0.5);
-	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	        backdrop-filter: blur(10px);
 
 	display: flex;
 	align-items: center;
@@ -43,5 +44,20 @@
 		font-size: 2rem;
 		color: #fff;
 		font-weight: 700;
+	}
+
+	.logout {
+		background-color: var(--text-color);
+		color: var(--active-link);
+		font-weight: 700;
+		padding: 0.5rem 1rem;
+
+		transition: color 200ms, background-color 200ms;
+
+		&:hover,
+		&:focus {
+			background-color: var(--active-link);
+			color: var(--text-color);
+		}
 	}
 }
