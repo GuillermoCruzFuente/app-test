@@ -1,7 +1,7 @@
 // since every route will be contain inside a section
 // define a global style for it
 section {
-	width: 75%;
+	width: min(800px, 90%);
 
 	//in order to expand the section and avoid overflow-y
 	//set a min-height equals to all viewport minus the navbar height
