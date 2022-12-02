@@ -1,6 +1,6 @@
 import { NavLink, NavLinkProps } from "react-router-dom";
 import styles from "../styles/components/CustomNavLink.module.scss";
-import type { NavLinkActiveHandler } from "../utils/NavLinkActiveHandler";
+import type { NavLinkActiveHandler } from "../@types/NavLinkActiveHandler";
 
 const CustomNavLink = (props: NavLinkProps) => {
 	const { children, to, className, ...OtherProps } = props;
