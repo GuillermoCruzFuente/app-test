@@ -1,61 +1,20 @@
 import { Link } from "react-router-dom";
-import CustomNavLink from "./CustomNavLink";
-import { AppRoutes } from "../routes";
 import styles from "../styles/components/Navigation.module.scss";
-import useUserAuth from "../hooks/useUserAuth";
-import { useDispatch } from "react-redux";
-import { logout } from "../features/login/loginSlice";
+import { useState } from "react";
+import createNavMenuItems from "./CreateNavMenuItems";
 
 const Nav = () => {
-	const dispatch = useDispatch();
+	const [isResponsiveMenuOpen, setIsResponsiveMenuOpen] = useState(false);
 
-	const { isUserAuthenticated } = useUserAuth();
-
-	const handleLogOut = () => {
-		dispatch(logout());
+	const hideMenu = () => {
+		setIsResponsiveMenuOpen(false);
 	};
 
-	const getNavLinks = () => {
-		if (isUserAuthenticated) {
-			const authLinks = Object.values(AppRoutes).map(
-				(route) =>
-					route.path != AppRoutes.login.path && (
-						<li key={route.path}>
-							<CustomNavLink
-								to={route.path}
-								className={styles.link}
-							>
-								{route.text}
-							</CustomNavLink>
-						</li>
-					)
-			);
-
-			authLinks.push(
-				<li key={"logout"}>
-					<button className={styles.logout} onClick={handleLogOut}>
-						logOut
-					</button>
-				</li>
-			);
-
-			return authLinks;
-		} else {
-			return Object.values(AppRoutes).map(
-				(route) =>
-					!route.isProtected && (
-						<li key={route.path}>
-							<CustomNavLink
-								to={route.path}
-								className={styles.link}
-							>
-								{route.text}
-							</CustomNavLink>
-						</li>
-					)
-			);
-		}
+	const toggleMenu = () => {
+		setIsResponsiveMenuOpen(!isResponsiveMenuOpen);
 	};
+
+	const navLinks = createNavMenuItems({ linkCallback: hideMenu });
 
 	return (
 		<nav className={styles.navbar}>
@@ -63,7 +22,17 @@ const Nav = () => {
 				BirthTracker
 			</Link>
 
-			<ol>{getNavLinks()}</ol>
+			<button className={styles.menuButton} onClick={toggleMenu}>
+				menu
+			</button>
+
+			<ol className={styles.deskContainer}>{navLinks}</ol>
+
+			{isResponsiveMenuOpen && (
+				<div className={styles.responsiveContainer}>
+					<ol>{navLinks}</ol>
+				</div>
+			)}
 		</nav>
 	);
 };
