@@ -1,14 +1,13 @@
-import { IEmployees } from "../@types/Employee";
+import { defer } from "react-router-dom";
+import { EmployeesDeferredData } from "../@types/Employee";
 import getEmployees from "../utils/fetchers/GetEmployees";
 
-export const employeesLoader = async (): Promise<IEmployees | undefined> => {
-	const employees = await getEmployees();
+export const employeesLoader = async () => {
+	const employeesDeferredData: EmployeesDeferredData = {
+		employeesDataPromise: getEmployees(),
+	};
 
-	if (employees?.success) {
-		return employees.data;
-	}
-
-	return undefined;
+	return defer(employeesDeferredData);
 };
 
 export default employeesLoader;
