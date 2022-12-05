@@ -1,9 +1,9 @@
-export interface EmployeeResponse {
+export interface EmployeesData {
 	success: boolean;
-	data: IEmployees;
+	data: EmployeesList;
 }
 
-export interface IEmployees {
+export interface EmployeesList {
 	employees: Array<Employee>;
 }
 
@@ -13,6 +13,10 @@ export interface Employee {
 	last_name: string;
 	birthday: number;
 }
+
+export type EmployeesDeferredData = {
+	employeesDataPromise: Promise<EmployeesData | undefined>;
+};
 
 export interface EmployeePostResponse {
 	success: boolean;
