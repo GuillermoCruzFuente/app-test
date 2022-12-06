@@ -14,11 +14,6 @@
 		margin-bottom: 1.75rem;
 	}
 
-	button {
-		width: 100%;
-		@include mixins.fancy-button;
-	}
-
 	label {
 		display: flex;
 		flex-flow: column;
