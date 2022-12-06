@@ -1,0 +1,46 @@
+.button {
+	appearance: unset;
+	background-color: var(--active-link);
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--text-color);
+	outline: none;
+	border: dashed transparent 2px;
+
+	$transition-time: 200ms;
+
+	transition: color $transition-time, background-color $transition-time,
+		border $transition-time;
+
+	// &:hover,
+	// &:focus {
+	// 	background-color: var(--text-color);
+	// 	color: var(--active-link);
+	// }
+
+	&:is(:hover, :focus) {
+		background-color: var(--text-color);
+		color: var(--active-link);
+	}
+
+	&:is(:focus) {
+		border: dashed var(--active-link) 2px;
+	}
+
+	:disabled {
+		opacity: 0.5;
+	}
+}
+
+.normalPadding {
+	padding: 1rem 2rem;
+}
+
+.reducedPadding {
+	padding: 0.25rem 0.5rem;
+}
+
+.fullWidth {
+	width: 100%;
+}
