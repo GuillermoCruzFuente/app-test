@@ -4,6 +4,7 @@ import { InputEmployee } from "../@types/InputEmployee";
 import postEmployee from "../utils/fetchers/PostEmployee";
 import styles from "../styles/components/PostEmployeeForm.module.scss";
 import { newUserInputPatter } from "../utils/InputPatterns";
+import Button from "./Button";
 
 const PostEmployeeForm = () => {
 	const nameRef = useRef<HTMLInputElement>(null);
@@ -106,9 +107,9 @@ const PostEmployeeForm = () => {
 				</label>
 			</div>
 
-			<button ref={buttonRef} type={"submit"}>
+			<Button fullWidth ref={buttonRef} type='submit'>
 				add new employee
-			</button>
+			</Button>
 		</form>
 	);
 };
