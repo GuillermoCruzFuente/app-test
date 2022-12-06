@@ -5,6 +5,7 @@ import { isValidUser } from "../data/ValidUser";
 import { useNavigate } from "react-router-dom";
 import SafeInput from "../components/SafeInput";
 import LoadingSpinner from "./LoadingSpinner";
+import Button from "./Button";
 
 const LoginForm = ({ className }: { className?: string }) => {
 	const usernameInputRef = useRef<HTMLInputElement>(null);
@@ -80,17 +81,17 @@ const LoginForm = ({ className }: { className?: string }) => {
 
 			<label>
 				username
-				<SafeInput ref={usernameInputRef} type={"text"} required/>
+				<SafeInput ref={usernameInputRef} type={"text"} required />
 			</label>
 
 			<label>
 				password
-				<SafeInput ref={passwordInputRef} type={"password"} required/>
+				<SafeInput ref={passwordInputRef} type={"password"} required />
 			</label>
 
-			<button ref={buttonInputRef} type={"submit"}>
+			<Button fullWidth ref={buttonInputRef} type='submit'>
 				Login
-			</button>
+			</Button>
 
 			{!!isValidatingUser && (
 				<LoadingSpinner text='We are making sure that you are real' />
