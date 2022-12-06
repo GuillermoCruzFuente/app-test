@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import styles from "../styles/components/ImageUploader.module.scss";
+import Button from "./Button";
 
 const ImageUploader = ({
 	files,
@@ -15,7 +16,6 @@ const ImageUploader = ({
 	);
 
 	const handleUpload = async () => {
-
 		runAfterUpload();
 	};
 
@@ -24,9 +24,11 @@ const ImageUploader = ({
 			<p className={styles.description}>
 				you dropped {urls.length} {urls.length === 1 ? "file" : "files"}
 			</p>
-			<button className={styles.fancyButton} onClick={handleUpload}>
+
+			<Button fullWidth onClick={handleUpload}>
 				upload
-			</button>
+			</Button>
+
 			<div className={styles.imgContainer}>
 				{urls.map((imgURL) => {
 					return <img key={imgURL} src={imgURL} alt='' />;
